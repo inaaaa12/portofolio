@@ -1,103 +1,212 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portofolio Dewi</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    body {
-      background: linear-gradient(to right, #f8f9fa, #e9ecef);
-      color: #333;
-      padding: 40px;
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 60px;
-    }
-
-    h1 {
-      font-size: 2.5em;
-      color: #2c3e50;
-    }
-
-    p.subtitle {
-      color: #7f8c8d;
-      margin-top: 10px;
-      font-size: 1.1em;
-    }
-
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>IT Portfolio - Your Name</title>
+<style>
+  /* Reset & base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin:0; padding:0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0f2027;  /* Dark tech gradient */
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+    color: #eee;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+  .container {
+    background: rgba(20, 40, 60, 0.85);
+    max-width: 350px;
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #1cb5e0aa;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    max-height: 600px;
+  }
+  header {
+    background: #1cb5e0;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  header img.profile-photo {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #03a9f4;
+    box-shadow:
+      0 0 8px #03a9f4,
+      0 0 15px #1cb5e0;
+    margin-bottom: 0.7rem;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    color: #051937;
+    text-shadow: 0 0 8px #0590c4;
+  }
+  header p {
+    margin-top: 0.3rem;
+    font-weight: 600;
+    color: #d8f3fc;
+  }
+  main {
+    padding: 1rem;
+    overflow-y: auto;
+    flex-grow: 1;
+  }
+  section {
+    margin-bottom: 1.5rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+    color: #1cb5e0;
+    border-bottom: 2px solid #1cb5e0;
+    padding-bottom: 0.25rem;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+  }
+  p, li {
+    line-height: 1.4;
+    font-size: 0.9rem;
+    color: #dce7eb;
+  }
+  ul {
+    padding-left: 1.2rem;
+  }
+  li {
+    margin-bottom: 0.4rem;
+  }
+  a {
+    color: #1cb5e0;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  a:hover, a:focus {
+    text-decoration: underline;
+  }
+  .projects .project,
+  .certificates .certificate,
+  .experience .job {
+    background: #132f4c;
+    border-radius: 8px;
+    padding: 0.6rem 0.8rem;
+    margin-bottom: 0.8rem;
+    box-shadow: inset 0 0 5px #1cb5e0;
+  }
+  .projects .project h3,
+  .certificates .certificate h3,
+  .experience .job h3 {
+    margin: 0 0 0.3rem 0;
+    font-size: 1.1rem;
+    color: #03a9f4;
+  }
+  /* Contact */
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+    gap: 0.3rem;
+  }
+  /* Scrollbar for mobile */
+  main::-webkit-scrollbar {
+    width: 6px;
+  }
+  main::-webkit-scrollbar-thumb {
+    background: #1cb5e0aa;
+    border-radius: 3px;
+  }
+  /* Responsive tweaks */
+  @media(max-width: 400px){
     .container {
-      max-width: 800px;
-      margin: 0 auto;
+      max-width: 100%;
+      max-height: 600px;
     }
-
-    .card {
-      background: white;
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-      margin-bottom: 30px;
-    }
-
-    h2 {
-      color: #2980b9;
-      margin-bottom: 15px;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 60px;
-      color: #999;
-    }
-
-    @media (max-width: 600px) {
-      body {
-        padding: 20px;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
-  <header>
-    <h1>Dewi Riska Putri Siregar</h1>
-    <p class="subtitle">Portofolio Pribadi</p>
-  </header>
-
-  <div class="container">
-    <section class="card">
-      <h2>Tentang Saya</h2>
-      <p>Saya adalah seorang pelajar yang aktif dan berprestasi di bidang seni, khususnya marching band. Saya senang belajar hal baru dan bekerja dalam tim.</p>
-    </section>
-
-    <section class="card">
-      <h2>Penghargaan</h2>
-      <ul>
-        <li>Juara Kejuaraan Terbuka Drum Band - Piala Gubernur Sumatera Utara 2023</li>
-        <li>Piagam Apresiasi dari Sekolah untuk Prestasi di Bidang Seni Musik</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h2>Kontak</h2>
-      <p>Email: dewi@example.com</p>
-    </section>
+  <div class="container" role="main" aria-label="Portfolio">
+    <header>
+      <img class="profile-photo" src="c:\Users\HP\OneDrive\文档\cv.jpg" alt="Tengku ina" />
+      <h1>Tengku Ina Nazwa Safina</h1>
+      <p>Mahasiswi</p>
+      <p>"Nikmati setiap proses menuju keberhasilan</p>
+    </header>
+    <main>
+      <section class="about" aria-labelledby="aboutme-title">
+        <h2 id="aboutme-title">About Me</h2>
+        <p>
+          Saya adalah mahasiswi Teknologi Informasi.Saya juga memiliki ketertarikan di bidang teknologi.Selain itu,saya pribadi yang suka mengeksplor berbagai hal baru dan bertanggung jawab dengan apa yang saya pilih.
+        </p>
+      </section>
+      <section class="skills" aria-labelledby="skills-title">
+        <h2 id="skills-title">Skills</h2>
+        <ul>
+          <li>Desain grafis</li>
+          <li>Penulis</li>
+          <li>Leadership</li>
+        </ul>
+      </section>
+      <section class="certificates" aria-labelledby="certificates-title">
+        <h2 id="certificates-title">Sertifikat</h2>
+        <div class="certificate-gallery">
+            <div class="gallery">
+              <img src="c:\Users\HP\OneDrive\图片\1.jpg" alt="Sertifikat 1" style="width: 250px;" onclick="openModal(this)">
+              <img src="c:\Users\HP\OneDrive\图片\2.jpg" alt="Sertifikat 2" style="width: 250px;"onclick="openModal(this)">
+              <img src="c:\Users\HP\OneDrive\图片\3.jpg" alt="Sertifikat 3" style="width: 250px;"onclick="openModal(this)">
+              <img src="c:\Users\HP\OneDrive\图片\4.jpg" alt="Sertifikat 4" style="width: 250px;"onclick="openModal(this)">
+              <img src="c:\Users\HP\OneDrive\图片\5.jpg" alt="Sertifikat 5" style="width: 250px;"onclick="openModal(this)">
+            </div>
+        </div>
+      </section>
+      <section class="experience" aria-labelledby="experience-title">
+        <h2 id="experience-title">Pengalaman</h2>
+        <div class="job">
+          <h3>LCTP Pramuka Tingkat Kabupaten</h3>
+          <p>Juara Utama Putri</p>
+        </div>
+        <div class="job">
+          <h3>Tari Kreasi Pramuka</h3>
+          <p>Kantor Walikota Medan
+        </div>
+      </section>
+      <section class="projects" aria-labelledby="projects-title">
+        <h2 id="projects-title">Projects</h2>
+        <div class="project">
+          <h3>Desain IG kelas</h3>
+          <a href="https://www.instagram.com/classf1_ofc?igsh=MTBnMjh1ejltcmw4dQ==" target="_blank" rel="noopener">View on Ig</a>
+        </div>
+        <div class="project">
+          <h3>Menulis Puisi</h3>
+          <a href="c:\Users\HP\Downloads\SMPK_Tengku Ina_Menyusuri Ruang Waktu.docx" target="_blank" rel="noopener">Visit on MS Word</a>
+        </div>
+      </section>
+      <section class="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title">Contact</h2>
+        <div class="contact-info">
+          <p>Email: <a href="inanazwa5@gmail.com">inanazwa5@gmail.com</a></p>
+          <p>WhatsApp <a href="085277861417">085277861417</a></p>
+          <p>instagram <a href="@tulisaninaa">@tulisaninaa</a></p>
+        </div>
+      </section>
+    </main>
   </div>
-
-  <footer>
-    &copy; 2025 Dewi Riska Putri Siregar
-  </footer>
 </body>
 </html>
+</content>
+</create_file>
